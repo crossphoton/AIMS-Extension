@@ -13,9 +13,15 @@ function syncWithRemoteServer(e) {
     fetch(ACAD_DATA_URL)
         .then((res) => res.json())
         .then((fetchedData) => {
+            var finalData = {
+                user: USER,
+                data: Array(fetchedData),
+                timestamp: Date.now(),
+            };
+
             fetch(REMOTE_SERVER_URL, {
                 method: "PATCH",
-                body: fetchedData,
+                body: finalData,
             });
         });
 }

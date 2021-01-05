@@ -6,7 +6,6 @@ const ACAD_DATA_URL =
     BASE_URL +
     "/courseReg/loadMyCoursesHistroy?studentId=3&courseCd=&courseName=&orderBy=1&degreeIds=&acadPeriodIds=&regTypeIds=&gradeIds=&resultIds=&isGradeIds=";
 
-// const REMOTE_SERVER_URL = "https://www.google.com";
 const REMOTE_SERVER_URL = "";
 
 var USER;
