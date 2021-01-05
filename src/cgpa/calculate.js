@@ -1,3 +1,8 @@
+/**
+ * This function fetch data, calculates the cgpa and display it.
+ *
+ * Make sure to supply CONFIGURATION file alongside before using the function.
+ */
 function showCGPA() {
     fetch(ACAD_DATA_URL)
         .then((res) => res.json())

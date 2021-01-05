@@ -9,7 +9,7 @@ body {
     vertical-align: middle;
     margin: auto;
     width: 600px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .heading {
     text-align: center;
@@ -20,9 +20,9 @@ body {
     padding: 0px;
 }
 .heading p {
-    font-size: 20px;
+    font-size: 40px;
     letter-spacing: 3px;
-    font-weight: normal;
+    font-weight: 50;
     margin-bottom: 0px;
 }
 .status {
@@ -42,6 +42,9 @@ body {
 }
 #grade-table {
     width: 100%;
+}
+tr {
+    padding: 2.5px 0;
 }
 #grade-table tr {
     display: flex;

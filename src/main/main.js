@@ -21,7 +21,12 @@ function calculate(e) {
 
             USER = { userName, userRollNumber };
 
+            $("#name-container").text(USER.userName);
+            $("#roll-number-container").text(USER.userRollNumber);
+
             showCGPA();
+            $(".data-container").show();
+            $(".app-buttons").hide();
         })
         .catch((error) => {
             chrome.notifications.create(
@@ -37,7 +42,10 @@ function calculate(e) {
 $(function () {
     $("#get-cgpa").click(calculate);
     $("#sync-cgpa").click(syncWithRemoteServer);
-    $(".print-page").click(() => window.print());
+    $(".print-page").click(() => {
+        $(".print-page").hide();
+        window.print();
+    });
 
     chrome.notifications.onClicked.addListener((notificationId) => {
         if (notificationId == "NotLoggedIn")
