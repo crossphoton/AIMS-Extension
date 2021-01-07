@@ -11,6 +11,7 @@ const REMOTE_SERVER_URL = "";
 var USER;
 
 class NotificationsConfig {
+    iconUrl = "/assets/icon.png";
     type = "basic";
     isClickable = true;
     priority = 2;

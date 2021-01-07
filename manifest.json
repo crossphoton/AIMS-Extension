@@ -4,7 +4,12 @@
     "description": "",
     "version": "0.8.0",
 
+    "icons": {
+        "48": "/assets/icon.png"
+    },
+
     "browser_action": {
+        "default_icon": "/assets/icon.png",
         "default_popup": "/src/popup/popup.html"
     },
 
