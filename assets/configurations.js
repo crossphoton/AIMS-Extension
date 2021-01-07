@@ -1,6 +1,6 @@
 const DEV_EMAIL = "cs19b1003@iiitr.ac.in";
 
-const BASE_URL = "https://aims.iiitr.ac.in/iiitraichur";
+const BASE_URL = "https://aims.iiitr.ac.in/iiitraichur/";
 const USER_URL = BASE_URL + "/valueSet/getTableData/30";
 const ACAD_DATA_URL =
     BASE_URL +

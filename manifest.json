@@ -10,5 +10,14 @@
         "default_popup": "/src/popup/popup.html"
     },
 
-    "permissions": ["notifications", "https://aims.iiitr.ac.in/*"]
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+
+    "permissions": [
+        "notifications",
+        "https://aims.iiitr.ac.in/*",
+        "webNavigation"
+    ]
 }
