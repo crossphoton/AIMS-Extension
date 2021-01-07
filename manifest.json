@@ -3,10 +3,8 @@
     "name": "AIMS Extension",
     "description": "",
     "version": "0.8.0",
-    "icons": { "48": "/assets/icon.jpg" },
 
     "browser_action": {
-        "default_icon": "/assets/icon.jpg",
         "default_popup": "/src/popup/popup.html"
     },
 
