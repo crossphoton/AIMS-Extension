@@ -20,7 +20,7 @@ function syncWithRemoteServer(e) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            email: USER.userRollNumber + "@" + DOMAIN,
+            email: String(USER.userRollNumber).toLowerCase() + "@" + DOMAIN,
             data: AIMSData,
         }),
     });
