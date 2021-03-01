@@ -11,6 +11,5 @@ fillCaptcha();
 console.log("this is from external source");
 
 document.getElementById("loginCapchaRefresh").addEventListener("click", (e) => {
-    console.log("kuabefka");
     setTimeout(fillCaptcha, 1000);
 });

@@ -21,6 +21,8 @@
     "permissions": [
         "notifications",
         "https://aims.iiitr.ac.in/*",
+        "https://iiitr.herokuapp.com/*",
+        "http://localhost:8000/*",
         "webNavigation"
     ]
 }

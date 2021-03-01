@@ -1,4 +1,8 @@
 function syncWithRemoteServer(e) {
+    if (!USER || !AIMSData) {
+        alert('Click on "Get CGPA" first');
+        return;
+    }
     if (!REMOTE_SERVER_URL || REMOTE_SERVER_URL == "") {
         chrome.notifications.create(
             "RemoteUnavailable",
@@ -10,18 +14,14 @@ function syncWithRemoteServer(e) {
         return;
     }
 
-    fetch(ACAD_DATA_URL)
-        .then((res) => res.json())
-        .then((fetchedData) => {
-            var finalData = {
-                user: USER,
-                data: Array(fetchedData),
-                timestamp: Date.now(),
-            };
-
-            fetch(REMOTE_SERVER_URL, {
-                method: "PATCH",
-                body: finalData,
-            });
-        });
+    fetch(REMOTE_SERVER_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            email: USER.userRollNumber + "@" + DOMAIN,
+            data: AIMSData,
+        }),
+    });
 }

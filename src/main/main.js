@@ -1,3 +1,5 @@
+var AIMSData;
+
 function calculate(e) {
     fetch(USER_URL)
         .then((res) => {
@@ -26,7 +28,7 @@ function calculate(e) {
 
             showCGPA();
             $(".data-container").show();
-            $(".app-buttons").hide();
+            // $(".app-buttons").hide();
         })
         .catch((error) => {
             chrome.notifications.create(

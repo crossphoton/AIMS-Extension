@@ -7,6 +7,7 @@ function showCGPA() {
     fetch(ACAD_DATA_URL)
         .then((res) => res.json())
         .then((data) => {
+            AIMSData = data;
             var cgpa = 0;
             var totalCredits = 0;
 
