@@ -7,7 +7,7 @@ function syncWithRemoteServer(e) {
         chrome.notifications.create(
             "RemoteUnavailable",
             new NotificationsConfig(
-                "Remote Server not Avaiable",
+                "Remote Server not Available",
                 "Click for support."
             )
         );
@@ -23,5 +23,19 @@ function syncWithRemoteServer(e) {
             email: String(USER.userRollNumber).toLowerCase() + "@" + DOMAIN,
             data: AIMSData,
         }),
+    })
+        .then((res) => {
+            if (res.ok) {
+                alert(
+                    "Sync Successful!! Enjoy the seamless environment (at least in future)."
+                );
+            } else syncError();
+        })
+        .catch((err) => syncError(err));
+}
+
+function syncError(err) {
+    $(function () {
+        $("#dialog").dialog();
     });
 }

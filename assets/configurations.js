@@ -1,11 +1,11 @@
-const DEV_EMAIL = "cs19b1003@iiitr.ac.in";
+const DEV_EMAIL = "codesoc@iiitr.ac.in";
 DOMAIN = "iiitr.ac.in";
 
 const BASE_URL = "https://aims.iiitr.ac.in/iiitraichur";
 const USER_URL = BASE_URL + "/valueSet/getTableData/30";
 const ACAD_DATA_URL =
     BASE_URL +
-    "/courseReg/loadMyCoursesHistroy?studentId=3&courseCd=&courseName=&orderBy=1&degreeIds=&acadPeriodIds=&regTypeIds=&gradeIds=&resultIds=&isGradeIds=";
+    "/courseReg/loadMyCoursesHistroy?studentId=&courseCd=&courseName=&orderBy=1&degreeIds=&acadPeriodIds=&regTypeIds=&gradeIds=&resultIds=&isGradeIds=";
 
 const REMOTE_SERVER_URL = "https://iiitr.herokuapp.com/studentdata/updateData";
 
