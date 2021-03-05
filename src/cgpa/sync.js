@@ -3,7 +3,7 @@ function syncWithRemoteServer(e) {
         alert('Click on "Get CGPA" first');
         return;
     }
-    if (!REMOTE_SERVER_URL || REMOTE_SERVER_URL == "") {
+    if (!REMOTE_DATA_SYNC_URL || REMOTE_DATA_SYNC_URL == "") {
         chrome.notifications.create(
             "RemoteUnavailable",
             new NotificationsConfig(
@@ -14,7 +14,7 @@ function syncWithRemoteServer(e) {
         return;
     }
 
-    fetch(REMOTE_SERVER_URL, {
+    fetch(REMOTE_DATA_SYNC_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -29,13 +29,17 @@ function syncWithRemoteServer(e) {
                 alert(
                     "Sync Successful!! Enjoy the seamless environment (at least in future)."
                 );
-            } else syncError();
+            } else syncError(res);
         })
-        .catch((err) => syncError(err));
+        .catch((err) => syncError(res));
 }
 
-function syncError(err) {
-    $(function () {
-        $("#dialog").dialog();
-    });
+function syncError(response) {
+    if (response.status == 401) {
+        if (confirm("You are authorized. Click OK to login")) {
+            open(REMOTE_LOGIN_URL);
+        } else return;
+    }
+
+    alert("Some error occured");
 }

@@ -7,7 +7,9 @@ const ACAD_DATA_URL =
     BASE_URL +
     "/courseReg/loadMyCoursesHistroy?studentId=&courseCd=&courseName=&orderBy=1&degreeIds=&acadPeriodIds=&regTypeIds=&gradeIds=&resultIds=&isGradeIds=";
 
-const REMOTE_SERVER_URL = "https://iiitr.herokuapp.com/studentdata/updateData";
+const REMOTE_SERVER_URL = "https://iiitr.herokuapp.com";
+const REMOTE_DATA_SYNC_URL = REMOTE_SERVER_URL + "/studentdata/updateData";
+const REMOTE_LOGIN_URL = REMOTE_SERVER_URL + "/auth/google";
 
 var USER;
 
