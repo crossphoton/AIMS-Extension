@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="/assets/jquery-3.5.1.min.js"></script>
-        <script src="/assets/configurations.js"></script>
-        <script src="main.js"></script>
-        <script src="/src/cgpa/calculate.js"></script>
-        <script src="/src/cgpa/sync.js"></script>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="shortcut icon" href="/assets/icon.png" />
-        <title>AIMS Extension</title>
-    </head>
-    <body>
-        <div class="heading">
-            <p>AIMS Extension</p>
+
+<head>
+    <script src="/assets/jquery.js"></script>
+    <script src="/assets/configurations.js"></script>
+    <script src="main.js"></script>
+    <script src="/src/cgpa/calculate.js"></script>
+    <script src="/src/cgpa/sync.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/assets/icon.png" />
+    <title>AIMS Extension</title>
+</head>
+
+<body>
+    <div class="heading">
+        <p>AIMS Extension</p>
+    </div>
+    <div class="button-container app-buttons">
+        <button id="get-cgpa">Get CGPA</button>
+        <button id="sync-cgpa">Sync with Remote Server</button>
+    </div>
+    <div hidden class="data-container">
+        <hr />
+        <div align="center" class="student-data-container">
+            <span id="name-container"></span> -
+            <span id="roll-number-container"></span>
         </div>
-        <div class="button-container app-buttons">
-            <button id="get-cgpa">Get CGPA</button>
-            <button id="sync-cgpa">Sync with Remote Server</button>
+        <hr />
+        <div class="report-container">
+            <div align="center" id="cgpa-container"></div>
+            <hr />
+            <div class="table-container">
+                <table id="grade-table"></table>
+            </div>
         </div>
-        <div hidden class="data-container">
-            <hr />
-            <div align="center" class="student-data-container">
-                <span id="name-container"></span> -
-                <span id="roll-number-container"></span>
-            </div>
-            <hr />
-            <div class="report-container">
-                <div align="center" id="cgpa-container"></div>
-                <hr />
-                <div class="table-container">
-                    <table id="grade-table"></table>
-                </div>
-            </div>
-            <hr />
-            <div class="button-container">
-                <button class="print-page">Print</button>
-            </div>
-            <footer align="center">
-                This document is not official and is result of a hobby project.
-            </footer>
+        <hr />
+        <div class="button-container">
+            <button class="print-page">Print</button>
         </div>
-    </body>
+        <footer align="center">
+            This document is not official and is result of a hobby project.
+        </footer>
+    </div>
+</body>
+
 </html>

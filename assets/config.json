@@ -1,0 +1,9 @@
+{
+    "version": 15125021042021,
+    "BASE_URL": "https://aims.iiitr.ac.in/iiitraichur",
+    "USER_URL": "https://aims.iiitr.ac.in/iiitraichur/valueSet/getTableData/30",
+    "ACAD_DATA_URL": "https://aims.iiitr.ac.in/iiitraichur/courseReg/loadMyCoursesHistroy?studentId=&courseCd=&courseName=&orderBy=1&degreeIds=&acadPeriodIds=&regTypeIds=&gradeIds=&resultIds=&isGradeIds=",
+    "REMOTE_SERVER_URL": "https://iiitr.herokuapp.com",
+    "REMOTE_DATA_SYNC_URL": "https://iiitr.herokuapp.com/studentdata/AIMSData",
+    "REMOTE_LOGIN_URL": "https://iiitr.herokuapp.com/auth/google"
+}

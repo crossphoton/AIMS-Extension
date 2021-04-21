@@ -1,17 +1,19 @@
 const DEV_EMAIL = "codesoc@iiitr.ac.in";
-DOMAIN = "iiitr.ac.in";
-
-const BASE_URL = "https://aims.iiitr.ac.in/iiitraichur";
-const USER_URL = BASE_URL + "/valueSet/getTableData/30";
-const ACAD_DATA_URL =
-    BASE_URL +
-    "/courseReg/loadMyCoursesHistroy?studentId=&courseCd=&courseName=&orderBy=1&degreeIds=&acadPeriodIds=&regTypeIds=&gradeIds=&resultIds=&isGradeIds=";
-
-const REMOTE_SERVER_URL = "https://iiitr.herokuapp.com";
-const REMOTE_DATA_SYNC_URL = REMOTE_SERVER_URL + "/studentdata/updateData";
-const REMOTE_LOGIN_URL = REMOTE_SERVER_URL + "/auth/google";
+const DOMAIN = "iiitr.ac.in";
+const CONFIG_URL = "https://raw.githubusercontent.com/iiitr-services/AIMS-Extension/main/assets/config.js";
+var config;
 
 var USER;
+
+// Checking configuration
+fetch(CONFIG_URL)
+    .then(res => res.json())
+    .then(data => config = data)
+    .catch(err =>
+        fetch("/assets/config.json")
+            .then(res => res.json())
+            .then(data => config = data)
+    )
 
 class NotificationsConfig {
     iconUrl = "/assets/icon.png";

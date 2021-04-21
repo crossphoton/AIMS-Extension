@@ -3,7 +3,7 @@ function syncWithRemoteServer(e) {
         alert('Click on "Get CGPA" first');
         return;
     }
-    if (!REMOTE_DATA_SYNC_URL || REMOTE_DATA_SYNC_URL == "") {
+    if (!config.REMOTE_DATA_SYNC_URL || config.REMOTE_DATA_SYNC_URL == "") {
         chrome.notifications.create(
             "RemoteUnavailable",
             new NotificationsConfig(
@@ -14,7 +14,7 @@ function syncWithRemoteServer(e) {
         return;
     }
 
-    fetch(REMOTE_DATA_SYNC_URL, {
+    fetch(config.REMOTE_DATA_SYNC_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

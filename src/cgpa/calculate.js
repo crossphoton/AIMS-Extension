@@ -4,7 +4,7 @@
  * Make sure to supply CONFIGURATION file alongside before using the function.
  */
 function showCGPA() {
-    fetch(ACAD_DATA_URL)
+    fetch(config.ACAD_DATA_URL)
         .then((res) => res.json())
         .then((data) => {
             AIMSData = data;

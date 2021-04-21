@@ -1,7 +1,7 @@
 var AIMSData;
 
 function calculate(e) {
-    fetch(USER_URL)
+    fetch(config.USER_URL)
         .then((res) => {
             if (res.redirected) {
                 chrome.notifications.create(
@@ -51,7 +51,7 @@ $(function () {
 
     chrome.notifications.onClicked.addListener((notificationId) => {
         if (notificationId == "NotLoggedIn")
-            chrome.tabs.create({ url: BASE_URL });
+            chrome.tabs.create({ url: config.BASE_URL });
 
         if (notificationId == "RemoteUnavailable")
             chrome.tabs.create({ url: "mailto:" + DEV_EMAIL });
