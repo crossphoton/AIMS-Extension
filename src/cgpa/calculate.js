@@ -23,7 +23,7 @@ function showCGPA() {
 
                 if (
                     redundantGrades.has(course.gradeDesc) &&
-                    gradeMapper[course.gradeDesc]
+                    !gradeMapper[course.gradeDesc]
                 )
                     return;
 
