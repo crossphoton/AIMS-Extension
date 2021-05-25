@@ -21,7 +21,11 @@ function showCGPA() {
                     course.gradeDesc
                 );
 
-                if (course.gradeDesc == "S") return;
+                if (
+                    redundantGrades.has(course.gradeDesc) &&
+                    gradeMapper[course.gradeDesc]
+                )
+                    return;
 
                 let credit = parseInt(parseFloat(course.credits));
                 cgpa +=

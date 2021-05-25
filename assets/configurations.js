@@ -1,19 +1,20 @@
 const DEV_EMAIL = "codesoc@iiitr.ac.in";
 const DOMAIN = "iiitr.ac.in";
-const CONFIG_URL = "https://raw.githubusercontent.com/iiitr-services/AIMS-Extension/main/assets/config.js";
+const CONFIG_URL =
+    "https://raw.githubusercontent.com/iiitr-services/AIMS-Extension/main/assets/config.js";
 var config;
 
 var USER;
 
 // Checking configuration
 fetch(CONFIG_URL)
-    .then(res => res.json())
-    .then(data => config = data)
-    .catch(err =>
+    .then((res) => res.json())
+    .then((data) => (config = data))
+    .catch((err) =>
         fetch("/assets/config.json")
-            .then(res => res.json())
-            .then(data => config = data)
-    )
+            .then((res) => res.json())
+            .then((data) => (config = data))
+    );
 
 class NotificationsConfig {
     iconUrl = "/assets/icon.png";
@@ -36,8 +37,12 @@ var gradeMapper = {
     C: 6,
     "C-": 5,
     D: 4,
-    S: 0,
+    AU: 0,
+    FS: 0,
+    FR: 0,
 };
+
+var redundantGrades = new Set(["S", "I", "U"]);
 
 function tableRow(courseId, courseName, cgpa) {
     return `<tr>
