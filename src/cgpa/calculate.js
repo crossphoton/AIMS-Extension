@@ -10,6 +10,7 @@ function showCGPA() {
             AIMSData = data;
             var cgpa = 0;
             var totalCredits = 0;
+	    var degreeCredits = 0;
 
             var tableData = "";
             data.forEach((course) => {
@@ -21,13 +22,15 @@ function showCGPA() {
                     course.gradeDesc
                 );
 
+                let credit = parseInt(parseFloat(course.credits));
+		degreeCredits += credit;
+
                 if (
                     redundantGrades.has(course.gradeDesc) &&
                     !gradeMapper[course.gradeDesc]
                 )
                     return;
 
-                let credit = parseInt(parseFloat(course.credits));
                 cgpa +=
                     parseInt(parseFloat(gradeMapper[course.gradeDesc])) *
                     credit;
@@ -38,6 +41,6 @@ function showCGPA() {
             cgpa = Math.round((cgpa / totalCredits) * 100) / 100;
 
             $("#grade-table").html(tableData);
-            $("#cgpa-container").text(`Your CGPA is : ${cgpa}`);
+            $("#cgpa-container").text(`Your CGPA is : ${cgpa} | Graded Credits : ${totalCredits} | Total Credits: ${degreeCredits}`);
         });
 }
