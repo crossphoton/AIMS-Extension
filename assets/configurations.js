@@ -44,10 +44,10 @@ var gradeMapper = {
 
 var redundantGrades = new Set(["S", "I", "U"]);
 
-function tableRow(courseId, courseName, cgpa) {
+function tableRow(courseId, courseName, credits, cgpa) {
     return `<tr>
                 <td>${courseId}</td>
                 <td>${courseName}</td>
-                <td>${cgpa}</td>
+                <td>${credits} | ${cgpa}</td>
             </tr>`;
 }

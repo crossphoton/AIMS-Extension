@@ -14,7 +14,6 @@ body {
 .heading {
     text-align: center;
     width: auto;
-    height: 40px;
     color: black;
     margin: 0px;
     padding: 0px;
@@ -43,10 +42,11 @@ body {
 #grade-table {
     width: 100%;
 }
+
 tr {
     padding: 2.5px 0;
 }
 #grade-table tr {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
 }
