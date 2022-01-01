@@ -1,6 +1,8 @@
 var AIMSData;
 
 function calculate(e) {
+    toggleLoading();
+    // Check for user
     fetch(config.USER_URL)
         .then((res) => {
             if (res.redirected) {
@@ -11,11 +13,13 @@ function calculate(e) {
                         "Looks like you're not logged in. Click to login"
                     )
                 );
+                toggleLoading();
                 return null;
             }
             return res.json();
         })
-        .then((data) => {
+        // If user is logged in
+        .then(async (data) => {
             if (data == null) return;
 
             userRollNumber = String(data[0].desc).split("-")[0];
@@ -26,8 +30,9 @@ function calculate(e) {
             $("#name-container").text(USER.userName);
             $("#roll-number-container").text(USER.userRollNumber);
 
-            showCGPA();
+            await showCGPA();
             $(".data-container").show();
+            toggleLoading();
             // $(".app-buttons").hide();
         })
         .catch((error) => {
@@ -38,6 +43,7 @@ function calculate(e) {
                     "Looks like there's a connection issue."
                 )
             );
+            toggleLoading();
         });
 }
 

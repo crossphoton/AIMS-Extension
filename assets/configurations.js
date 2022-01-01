@@ -46,8 +46,17 @@ var redundantGrades = new Set(["S", "I", "U"]);
 
 function tableRow(courseId, courseName, credits, cgpa) {
     return `<tr>
+                <td>
+                    <input type="checkbox" checked class="checkbox" id="${courseId}">
+                </td>
                 <td>${courseId}</td>
                 <td>${courseName}</td>
                 <td>${credits} | ${cgpa}</td>
             </tr>`;
+}
+
+var LOADING = false;
+function toggleLoading() {
+    LOADING = !LOADING;
+    LOADING ? $.LoadingOverlay("show") : $.LoadingOverlay("hide");
 }

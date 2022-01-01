@@ -1,6 +1,8 @@
 function syncWithRemoteServer(e) {
+    toggleLoading();
     if (!USER || !AIMSData) {
         alert('Click on "Get CGPA" first');
+        toggleLoading();
         return;
     }
     if (!config.REMOTE_DATA_SYNC_URL || config.REMOTE_DATA_SYNC_URL == "") {
@@ -11,6 +13,7 @@ function syncWithRemoteServer(e) {
                 "Click for support."
             )
         );
+        toggleLoading();
         return;
     }
 
@@ -26,6 +29,7 @@ function syncWithRemoteServer(e) {
     })
         .then((res) => {
             if (res.ok) {
+                toggleLoading();
                 alert(
                     "Sync Successful!! Enjoy the seamless environment (at least in future)."
                 );
@@ -35,11 +39,12 @@ function syncWithRemoteServer(e) {
 }
 
 function syncError(response) {
+    toggleLoading();
     if (response.status == 401) {
         if (confirm("You are authorized. Click OK to login")) {
             open(REMOTE_LOGIN_URL);
         } else return;
     }
 
-    alert("Some error occured");
+    alert("Some error occurred");
 }
