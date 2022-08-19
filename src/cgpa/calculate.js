@@ -54,7 +54,6 @@ function calculateFromData(data) {
 
     var tableData = "";
     data.forEach((course, ind) => {
-        if (course.gradeDesc == "") return;
         let credit = parseInt(parseFloat(course.credits));
 
         if (ind && course.hdrId !== data[ind - 1].hdrId)
@@ -74,6 +73,7 @@ function calculateFromData(data) {
             !gradeMapper[course.gradeDesc]
         )
             return;
+        if (course.gradeDesc == "") return;
 
         cgpa += parseInt(parseFloat(gradeMapper[course.gradeDesc])) * credit;
 
