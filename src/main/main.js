@@ -52,6 +52,7 @@ $(function () {
     $("#sync-cgpa").click(syncWithRemoteServer);
     $(".print-page").click(() => {
         $(".print-page").hide();
+        $(".button-container").hide();
         window.print();
     });
 
