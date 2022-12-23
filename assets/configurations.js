@@ -1,7 +1,7 @@
 const DEV_EMAIL = "codesoc@iiitr.ac.in";
 const DOMAIN = "iiitr.ac.in";
 const CONFIG_URL =
-    "https://raw.githubusercontent.com/iiitr-services/AIMS-Extension/main/assets/config.json";
+    "https://crossphoton.github.io/AIMS-Extension/assets/config.json";
 var config;
 
 var USER;
