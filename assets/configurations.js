@@ -40,6 +40,7 @@ var gradeMapper = {
     AU: 0,
     FS: 0,
     FR: 0,
+    F: 0,
 };
 
 var redundantGrades = new Set(["S", "I", "U"]);
